@@ -8,14 +8,14 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("Pushbutton Counter");
-  pinMode(BTN, INPUT_PULLUP);
+  pinMode(PIN_BUTTON, INPUT_PULLUP);
 }
 
 void loop()
 {
   static int count = 0;
   static int lastState = HIGH;
-  int state = digitalRead(BTN);
+  int state = digitalRead(PIN_BUTTON);
   if (state != lastState)
   {
     if (state == LOW)
