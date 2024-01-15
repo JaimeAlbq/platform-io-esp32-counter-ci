@@ -1,3 +1,7 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/queue.h"
+
 #define BTN 5
 
 void setup()
@@ -23,5 +27,5 @@ void loop()
     }
     lastState = state;
   }
-  delay(10);
+  vTaskDelay(10 / portTICK_PERIOD_MS);
 }
